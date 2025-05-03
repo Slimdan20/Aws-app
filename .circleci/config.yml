@@ -44,7 +44,14 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: .
+          at: /workspace
+      - run:
+          name: Move build files to the root directory
+          command: |
+            mv /workspace/dist ./dist
+            mv /workspace/server.cjs ./server.cjs
+            mv /workspace/Procfile ./Procfile
+            
       - run:
           name: Install Python and pip
           command: |
