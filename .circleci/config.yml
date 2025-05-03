@@ -62,8 +62,8 @@ jobs:
           name: fetch and print the URL of the deployed application
           command: |
             export PATH=$HOME/.local/bin:$PATH
-            EB_URL=$(eb describe aws-env --region us-west-2 --no-verify-ssl | grep "CNAME" | awk '{print $2}')
-            echo "Deployed application URL: http://$EB_URL"
+            echo "Deployed app URL:"
+            eb status aws-env | grep CNAME | awk '{print $2}'
 
 workflows:
   version: 2
