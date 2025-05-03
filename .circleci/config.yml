@@ -35,6 +35,9 @@ jobs:
           root: .
           paths:
             - dist  
+            - server.cjs
+            - Procfile
+            - package.json
 
   deploy:
     executor: node-executor
