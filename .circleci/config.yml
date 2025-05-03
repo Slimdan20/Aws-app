@@ -46,13 +46,6 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Move build files to the root directory
-          command: |
-            cp -r workspace/dist ./dist
-            cp -r workspace/Procfile ./Procfile
-            cp -r workspace/server.cjs ./server.cjs
-            cp -r workspace/package.json ./package.json
-      - run:
           name: Install Python and pip
           command: |
             sudo apt-get update
