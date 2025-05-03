@@ -44,7 +44,7 @@ jobs:
     steps:
       - checkout
       - attach_workspace:
-          at: /workspace
+          at: .
       - run:
           name: Move build files to the root directory
           command: |
